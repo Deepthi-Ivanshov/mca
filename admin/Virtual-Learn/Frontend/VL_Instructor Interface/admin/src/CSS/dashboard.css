@@ -1,0 +1,1393 @@
+@font-face {
+  font-family: ProximaNovaSoft-Regular;
+  src: url('../fonts/ProximaNovaSoft-Regular.otf');
+}
+
+@font-face {
+  font-family: AvenirLTStd-Book;
+  src: url('../fonts/AvenirLTStd-Book.otf');
+}
+
+:root {
+  --primaryClr: #092963;
+  --secondaryClr: #ee5c4d;
+  --underlineClr: #253157;
+  --formFontClr: #7a7a7a;
+  --backgroundClr: #f9f9f9;
+  --dashboardFont: #292929;
+  --primaryFont: 'ProximaNovaSoft-Regular';
+  --secondaryFont: 'AvenirLTStd-Book';
+}
+
+.dashboard {
+  font-family: var(--primaryFont);
+}
+
+/*topbar*/
+.dashboard-topbar {
+  position: fixed;
+  display: flex;
+  background: #ffffff;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  right: 0;
+  height: 109.27px;
+  left: 338px;
+  top: 0px;
+}
+
+.dashboard-topbar-title {
+  position: relative;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 31px;
+  color: var(--dashboardFont);
+  padding-left: 24px;
+}
+
+.dashboard-topbar-profile {
+  right: 10px;
+  padding-right: 71px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  position: fixed;
+  top: 14px;
+  cursor: pointer;
+}
+
+.dashboard-topbar-profileImg {
+  position: relative;
+}
+
+.dashboard-topbar-profileImg img {
+  position: relative;
+  border-radius: 50%;
+  width: 57.25px;
+  height: 52px;
+}
+
+/*sidebar*/
+.dashboard-sidebar {
+  position: fixed;
+  width: 338px;
+  height: 100%;
+  left: 0;
+  top: 0px;
+  background: #ffffff;
+  border-radius: 2px;
+  color: black;
+}
+
+@media screen and (min-width: 764px) {
+  .nav-btn {
+    display: none;
+  }
+  .delete-course-modal {
+    width: 400px !important;
+    height: 336px !important;
+  }
+  .delete-course-modal-content .buttons button {
+    width: 98px !important;
+    height: 42px !important;
+  }
+  .delete-course-modal-content .buttons {
+    gap: 18px !important;
+  }
+}
+
+@media screen and (max-width: 973px) {
+  .dashboard-recently-added {
+    width: 80% !important;
+  }
+}
+@media screen and (max-width: 1494px) {
+  .dashboard-blocks {
+    top: 410px !important;
+  }
+
+  .dashboard-recently-added {
+    margin-left: 24px;
+    border-radius: 1em !important;
+  }
+  .dashboard-time-recentCourses {
+    position: absolute;
+    top: 0 !important;
+    flex-direction: column !important;
+  }
+}
+@media screen and (max-width: 764px) {
+  .nav-btn {
+    display: none;
+  }
+  .addCourses-container .react-tabs__tab,
+  .addCourses-container .react-tabs__tab--selected {
+    font-size: 30px !important;
+    line-height: 17px !important;
+  }
+  .addCourses-container .react-tabs__tab {
+    display: flex;
+    float: center !important;
+    margin: 0 11px !important;
+  }
+  ul.react-tabs__tab-list {
+    width: 100%;
+    height: 60px !important;
+    top: 72.27px !important;
+    left: 0 !important;
+  }
+}
+
+@media screen and (max-width: 938px) {
+  .addCourses-container .react-tabs__tab,
+  .addCourses-container .react-tabs__tab--selected {
+    font-size: 19px !important;
+    line-height: 18px !important;
+  }
+
+  .addCourses-container,
+  .react-tabs__tab {
+    display: flex;
+    float: center !important;
+    margin: 0 11px !important;
+  }
+}
+@media screen and (max-width: 1148px) {
+  .addCourses-container,
+  .react-tabs__tab--selected {
+    font-size: 20px !important;
+    line-height: 31px !important;
+  }
+  .addCourses-container .react-tabs__tab {
+    display: flex;
+    float: center !important;
+    margin: 0 11px !important;
+  }
+}
+@media screen and (max-width: 764px) {
+  .dashboard-blocks {
+    top: 410px !important;
+  }
+  .dashboard-sidebar {
+    width: 0 !important;
+  }
+  .dashboard-block-title {
+    font-size: 1.5em !important;
+  }
+  .dashboard-block-value {
+    font-size: 2.5em !important;
+  }
+  .dashboard-sidebarContents {
+    position: fixed !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    display: flex;
+    margin-top: 53.72px;
+    align-items: center !important;
+    justify-content: space-around !important;
+    padding: 0 !important;
+    gap: 13.66px;
+    flex-direction: row !important;
+    z-index: 60 !important;
+    background: #ffffff;
+    box-shadow: 0px 9px 27px rgb(0 0 0 / 7%),
+      0px 3.75998px 11.28px rgb(0 0 0 / 5%),
+      0px 2.01027px 6.0308px rgb(0 0 0 / 4%),
+      0px 1.12694px 3.38082px rgb(0 0 0 / 4%),
+      0px 0.598509px 1.79553px rgb(0 0 0 / 3%),
+      0px 0.249053px 0.747159px rgb(0 0 0 / 2%);
+  }
+
+  .dashboard-sidebarContents .react-tabs__tab--selected div div {
+    display: none;
+  }
+
+  .dashboard-sidebarContents div div {
+    display: none;
+  }
+  .dashboard-sidebarContents .react-tabs__tab--selected {
+    background: var(--primaryClr);
+    width: 63.74px !important;
+    height: 63.74px;
+    border-radius: 10px !important;
+    border: none;
+    display: flex !important;
+    align-items: center;
+    justify-content: center !important;
+
+    outline: none;
+  }
+  .react-tabs__tab--selected .dashboard-SettingsIcon {
+    margin: 0 !important;
+  }
+
+  .react-tabs__tab--selected .dashboard-listIcon {
+    margin: 0 !important;
+  }
+
+  .react-tabs__tab--selected .dashboard-addVideoIcon {
+    margin: 0 !important;
+  }
+  .react-tabs__tab--selected .dashboard-dashboardIcon {
+    margin: 0 !important;
+  }
+
+  .background {
+    left: 0 !important;
+  }
+  .dashboard-dashboard {
+    left: 0 !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    bottom: 82px !important;
+  }
+  .dashboard-recently-added {
+    position: relative;
+    border-radius: 1em !important;
+    padding: 20px !important;
+    width: auto !important;
+    left: 0px !important;
+    margin-bottom: 26px !important;
+    right: 0px !important;
+    margin-right: 24px !important;
+  }
+  .dashboard-recently-added div h2 {
+    font-size: 0.7em !important;
+  }
+  .viewAll-button {
+    font-size: 10px !important;
+  }
+  .dashboard-date {
+    width: auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .dashboard-blocks-1 {
+    position: relative;
+    border-radius: 1em !important;
+    padding: 20px !important;
+  }
+  .dashboard-blocks-2 {
+    position: relative;
+    border-radius: 1em !important;
+    padding: 20px !important;
+  }
+  .dashboard-blocks-3 {
+    position: relative;
+    border-radius: 1em !important;
+    padding: 20px !important;
+  }
+
+  .dashboard-table {
+    margin: 0 24px 0 24px !important;
+    border-radius: 1em !important;
+  }
+  .dashboard-blocks {
+    margin: 0 24px 0 24px !important;
+  }
+  .dashboard-sidebar-logo {
+    position: fixed;
+    width: 15em !important;
+    height: auto !important;
+    left: 15px !important;
+    top: 20px !important;
+  }
+  .dashboard-body {
+    left: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .dashboard-topbar-title {
+    left: -130px !important;
+  }
+  .studentList-viewall {
+    top: 141px !important;
+    left: 0 !important;
+    margin: 0 81px 0 20px !important;
+    border-radius: 1em !important;
+    bottom: 95px !important;
+  }
+
+  .Recentcourses-list {
+    left: 0 !important;
+  }
+  .RecentCourses-header {
+    font-size: 0.85em !important;
+  }
+}
+
+@media screen and (max-width: 551px) {
+  .dashboard-body {
+    left: 0 !important;
+    border-radius: 0 !important;
+    top: 70px !important;
+  }
+  .dashboard-sidebar-logo {
+    z-index: 10 !important;
+    width: 120px !important;
+    height: 70px !important;
+    object-fit: cover;
+    object-position: -46px 0;
+    left: 24px !important;
+    top: 0 !important;
+  }
+  .dashboard-topbar {
+    position: fixed;
+    display: flex;
+    background: #ffffff;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    right: 0;
+    height: 70px;
+    left: 0 !important;
+    top: 0px;
+    z-index: 1;
+    box-shadow: 0px 9px 27px rgb(0 0 0 / 7%),
+      0px 3.75998px 11.28px rgb(0 0 0 / 5%),
+      0px 2.01027px 6.0308px rgb(0 0 0 / 4%),
+      0px 1.12694px 3.38082px rgb(0 0 0 / 4%),
+      0px 0.598509px 1.79553px rgb(0 0 0 / 3%),
+      0px 0.249053px 0.747159px rgb(0 0 0 / 2%) !important;
+  }
+  .studentList-viewall {
+    top: 79px !important;
+  }
+
+  .dashboard-topbar-title {
+    font-size: 15px !important;
+    left: 122px !important;
+    bottom: -18px;
+  }
+
+  .dashboard-topbar-profile {
+    right: 10px;
+    padding-right: 20px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    position: fixed;
+    top: 14px;
+    cursor: pointer;
+  }
+
+  .dashboard-topbar-profileImg img {
+    height: 32px;
+    width: auto;
+  }
+  .dashboard-topbar-profileName {
+    font-size: 10px !important;
+  }
+}
+
+@media screen and (max-width: 1494px) {
+  .dashboard-block-title {
+    font-size: 1em !important;
+  }
+  .dashboard-block-value {
+    font-size: 2em !important;
+  }
+  .dashboard-blocks-1 {
+    position: relative;
+    border-radius: 1em !important;
+    padding: 20px !important;
+  }
+  .dashboard-blocks-2 {
+    position: relative;
+    border-radius: 1em !important;
+    padding: 20px !important;
+  }
+  .dashboard-blocks-3 {
+    position: relative;
+    border-radius: 1em !important;
+    padding: 20px !important;
+  }
+
+  .dashboard-table {
+    position: absolute;
+    top: 572px !important;
+
+    border-radius: 1em !important;
+    padding: 40px 20px !important;
+  }
+  .dashboard-dashboard {
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .dashboard-table-header {
+    font-size: 0.7em !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .recently-added {
+    padding: 0 !important;
+  }
+  .recently-added-thumbnail {
+    position: relative;
+    height: 2em !important;
+    border-radius: 0.2em !important;
+  }
+  .recently-added-play {
+    position: relative;
+    top: 8px !important;
+    right: 42px !important;
+  }
+  .recently-added-title {
+    padding: 0em !important;
+  }
+}
+@media screen and (max-width: 317px) {
+  .dashboard-topbar-title {
+    font-size: 15px !important;
+    left: 125px !important;
+    bottom: 11px !important;
+  }
+}
+@media screen and (max-width: 1183px) {
+  .dashboard-table {
+    position: absolute;
+    top: 849px !important;
+  }
+  .dashboard-blocks {
+    flex-direction: column !important;
+  }
+  .dashboard-block-title {
+    font-size: 1em !important;
+  }
+  .dashboard-block-value {
+    font-size: 2em !important;
+  }
+  .dashboard-blocks-1 {
+    position: relative;
+    border-radius: 1em !important;
+    padding: 20px !important;
+    width: 100% !important;
+    margin-left: 24px !important;
+    margin-bottom: 26px !important;
+  }
+  .dashboard-blocks-2 {
+    position: relative;
+    border-radius: 1em !important;
+    padding: 20px !important;
+    width: 100% !important;
+    margin-left: 24px !important;
+    margin-bottom: 26px !important;
+  }
+  .dashboard-blocks-3 {
+    position: relative;
+    border-radius: 1em !important;
+    padding: 20px !important;
+    width: 100% !important;
+    margin-left: -8px !important;
+    margin-bottom: 26px !important;
+  }
+}
+
+.dashboard-sidebarContentsSidebar {
+  position: relative;
+  display: flex;
+  margin-top: 53.72px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 48px;
+  gap: 13.66px;
+}
+
+.dashboard-sidebar-logo {
+  position: relative;
+  height: 111.27px;
+  left: 12px;
+  top: 17px;
+}
+
+.dashboard-sidebarContents {
+  position: relative;
+  display: flex;
+  margin-top: 53.72px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 48px;
+  gap: 13.66px;
+}
+
+.dashboard-tabs {
+  position: relative;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  color: #232323;
+  padding: 24.58px 0;
+  cursor: pointer;
+}
+
+.dashboard-sidebarContents .react-tabs__tab--selected {
+  background: var(--primaryClr);
+  width: 245px;
+  height: 63.74px;
+  border-radius: 18px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  outline: none;
+}
+
+.dashboard-sidebarContents .react-tabs__tab--selected div div {
+  color: white;
+}
+
+.dashboard-sidebarContents div {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  align-content: space-evenly;
+  justify-content: space-between;
+  color: #232323;
+}
+
+.dashboard-tabs {
+  list-style-type: none;
+}
+
+.dashboard-tabs div img {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  margin: 0 23px 0 0;
+}
+
+.react-tabs__tab--selected .dashboard-dashboardIcon {
+  content: url('../images/icons/dashboard_fill_24dp\ \(1\)\ 1.png');
+  position: relative;
+  height: 30px;
+  width: 30px;
+  margin: 0 23px 0 0;
+}
+
+.react-tabs__tab--selected .dashboard-addVideoIcon {
+  content: url('../images/icons/Add_video\ fill.png');
+  position: relative;
+  height: 30px;
+  width: 30px;
+  margin: 0 23px 0 0;
+}
+
+.react-tabs__tab--selected .dashboard-listIcon {
+  content: url('../images/icons/list_white.png');
+  position: relative;
+  height: 30px;
+  width: 30px;
+  margin: 0 23px 0 0;
+}
+
+.react-tabs__tab--selected .dashboard-SettingsIcon {
+  content: url('../images/icons/setting_fill.png');
+  position: relative;
+  height: 30px;
+  width: 30px;
+  margin: 0 23px 0 0;
+}
+
+/*body*/
+
+.dashboard-body {
+  position: fixed;
+  left: 338px;
+  top: 109.274px;
+  border-radius: 3em 0 0 3em;
+  right: 0;
+  bottom: 0;
+  background-color: #f9f9f9;
+}
+
+.dashboard-dashboard {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  right: 0;
+  left: 0;
+  top: 0;
+  margin-bottom: 24px;
+  bottom: 40px;
+  height: auto;
+  overflow: auto;
+}
+.studentlist {
+  height: 100%;
+}
+.dashboard-time-recentCourses {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.dashboard-date {
+  position: relative;
+  margin: 53.72px 24px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dashboard-date div {
+  margin-bottom: 10px;
+}
+
+.dashboard-date div h1 {
+  margin-bottom: 0;
+  font-size: 3em;
+}
+
+.dashboard-date div p {
+  font-size: 25.49px;
+}
+
+.dashboard-recently-added {
+  position: relative;
+  margin-right: 80px;
+  display: flex;
+  flex-direction: column;
+  padding: 17px 23px;
+  gap: 9.1px;
+  width: 516px;
+  height: 7em;
+  top: 36.42px;
+  background-color: #ffffff;
+  box-shadow: 0px 16px 31px rgba(0, 0, 0, 0.01);
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+.dashboard-recently-added div:first-child {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.dashboard-recently-added div h2 {
+  font-size: 1.2em;
+}
+
+.delete-course-modal {
+  position: absolute;
+  width: 857px !important;
+  height: 315px !important;
+  background: #ffffff;
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--primaryFont);
+  background: #fff;
+  border-radius: 12px 12px 0 0;
+}
+
+.recently-added {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2em 1em;
+}
+.recently-added-thumbnail {
+  position: relative;
+  height: 3em;
+  border-radius: 0.5em;
+}
+
+.recently-added-play {
+  position: relative;
+  top: 15px;
+  right: 50px;
+}
+
+.recently-added-title {
+  position: relative;
+  padding: 0.8em;
+}
+
+.dashboard-blocks {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  top: 223px;
+  right: 0;
+  left: 0;
+  margin: 0 86px 0 24px;
+}
+.dashboard-dashboard-body {
+  position: relative;
+  height: 100%;
+  overflow: auto !important;
+}
+.dashboard-table {
+  position: absolute;
+  top: 408px;
+  padding-bottom: 100px;
+  right: 0;
+  left: 0;
+  margin: 0 86px 0 24px;
+  background-color: white;
+  box-shadow: 0px 16px 31px rgba(0, 0, 0, 0.01);
+  border-radius: 0;
+  padding: 40px;
+  overflow: auto;
+  right: 0;
+  height: 488px;
+}
+
+.dashboard-table-scroll {
+  overflow: hidden;
+}
+
+.dashboard-table-span {
+  color: #b3b3b3;
+  padding: 29px;
+  font-size: 0.6em;
+}
+
+.dashboard-table-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.studentList {
+  overflow: auto;
+}
+.dashboard-blocks-1 {
+  position: relative;
+  width: 470px;
+  height: 7em;
+  margin-right: 34px;
+  background-color: #ffffff;
+  box-shadow: 0px 16px 31px rgba(0, 0, 0, 0.01);
+  border-radius: 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.dashboard-block-title {
+  font-weight: 500;
+  font-size: 1.5em;
+}
+
+.dashboard-block-value {
+  font-weight: 700;
+  font-size: 2.5em;
+  line-height: 53px;
+}
+
+.dashboard-blocks-2 {
+  position: relative;
+  width: 470px;
+  height: 7em;
+  margin-right: 34px;
+  background-color: #ffffff;
+  box-shadow: 0px 16px 31px rgba(0, 0, 0, 0.01);
+  border-radius: 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.dashboard-blocks-3 {
+  position: relative;
+  width: 470px;
+  height: 7em;
+  background-color: #ffffff;
+  box-shadow: 0px 16px 31px rgba(0, 0, 0, 0.01);
+  border-radius: 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.dashboard-table-contents {
+  position: relative;
+}
+
+.studentList-table {
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+
+.studentList-table table {
+  position: relative;
+  top: 1em;
+  width: 100%;
+}
+
+.studentList-table table th {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9em;
+  line-height: 20px;
+
+  color: #b3b3b3;
+}
+
+.studentList-table table,
+th,
+td,
+tr,
+thead,
+tbody {
+  position: relative;
+  left: 0;
+  right: 0;
+  border: 1px solid rgba(102, 102, 102, 0.08);
+  border-collapse: collapse;
+
+  padding: 0.8em 0.5em;
+}
+.react-switch-checkbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.table-bullet {
+  text-align: center;
+  color: #e6e6e6;
+}
+.table-ProfilePic {
+  position: relative;
+  height: 24px;
+  width: 24px;
+  object-fit: cover;
+  object-position: 10% 10%;
+  border-radius: 50%;
+  margin: 0 20px 0 0;
+}
+
+.table-name {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.table-joining,
+.table-completed {
+  color: #666666 !important;
+  font-weight: 400;
+}
+
+.table-status {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.table-status-completed {
+  color: #1eab0d !important;
+}
+
+.table-status-ongoing {
+  color: #f7b055 !important;
+}
+
+.courseNameTr {
+  border: none !important;
+}
+
+.Recentcourses-list {
+  position: fixed;
+  left: 338px;
+  top: 109.274px;
+  right: 0;
+  bottom: 0;
+  background-color: #f9f9f9;
+  overflow: auto;
+}
+
+.delete-courses {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.viewAll-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  color: #2831ff;
+  text-decoration: underline;
+}
+
+.RecentCourses-content {
+  position: relative;
+  background-color: #ffffff;
+  margin: 15px;
+  min-height: 100%;
+  overflow: auto;
+  padding: 34px;
+  border-radius: 10px;
+  z-index: -2;
+}
+
+.RecentCourses-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #292929;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 29px;
+  cursor: pointer;
+  z-index: 0;
+  background-color: #ffffff;
+  right: 15px;
+  padding-bottom: 20px;
+}
+
+.RecentCourses-body {
+  position: relative;
+  overflow: auto;
+  z-index: -1;
+  overflow: scroll;
+}
+
+.RecentCourses-CourseList {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.RecentCourses-Thumbnail {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.RecentCourses-thumbnail {
+  position: relative;
+  width: 134px;
+  height: 76px;
+  object-fit: cover;
+  object-position: 10% 10%;
+  border-radius: 3px;
+}
+
+.RecentCourses-thumbnail-play {
+  position: relative;
+  right: 76.5px;
+}
+
+.RecentCourses-Title {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.RecentCourses-titleContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.RecentCourses-titleContainer div {
+  padding: 6px 0px;
+  color: #1a1a1a;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.RecentCourses-titleContainer .date-Container {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #999999;
+}
+
+.studentList-viewall {
+  position: fixed;
+  top: 8.5em;
+  bottom: 31.65px;
+  right: -61px;
+  left: 338px;
+  margin: 0 142px 0 24px;
+  background-color: white;
+  box-shadow: 0px 16px 31px rgba(0, 0, 0, 0.01);
+  border-radius: 0;
+  padding: 40px;
+  overflow: auto;
+  border-radius: 24px;
+}
+
+.table-head {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9em;
+  line-height: 20px;
+  color: #b3b3b3;
+}
+
+.studentlist-table {
+  position: relative;
+  width: 100%;
+  overflow: auto;
+}
+
+.studentList-viewall table {
+  position: relative;
+  left: 0;
+  right: 0;
+  border: 1px solid rgba(102, 102, 102, 0.08);
+  border-collapse: collapse;
+  text-align: justify;
+  padding: 0.8em 0.5em;
+}
+
+.QnA-Save {
+  margin-top: -338px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000060;
+
+  z-index: 4;
+  display: grid;
+  overflow-y: auto;
+  -webkit-transition: all 300ms linear;
+  transition: all 300ms linear;
+  /* add later */
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+/* toggle sidebar */
+.show-sidebar {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: transparent;
+  transition: all 300ms linear;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.ProfileContents {
+  position: absolute;
+  width: 464px;
+  bottom: 0;
+  right: 0;
+  top: 0px;
+  background: var(--primaryClr);
+}
+.certificate-preview-contents {
+  padding-left: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.certificate-Title {
+  position: relative;
+  top: 110px;
+  color: #7a7a7a;
+  font-size: 38px;
+  font-weight: bolder;
+  line-height: 70px;
+  text-align: center;
+}
+
+.certificate-Body {
+  display: flex;
+  position: absolute;
+  margin-top: 60px;
+  width: 816px;
+  font-size: 27px;
+  line-height: 58px;
+  top: 335px;
+  text-align: justify;
+  color: #b3b3b3;
+}
+
+.Certificate-Name {
+  position: absolute;
+  color: #ec5d52;
+  font-weight: bold;
+  font-size: 72px;
+  padding-top: 70px;
+  top: 120px;
+}
+
+.Certificate-Course {
+  color: #2b2b2b;
+  font-size: 57px;
+  margin-top: 56px;
+  position: absolute;
+  font-weight: 500;
+  top: 223px;
+}
+
+@media screen and (max-width: 466px) {
+  .RecentCourses-thumbnail {
+    width: 83px !important;
+    height: 45px !important;
+  }
+  .RecentCourses-titleContainer div {
+    font-size: 14px !important;
+  }
+}
+
+@media screen and (max-width: 353px) {
+  .RecentCourses-thumbnail {
+    width: 60px !important;
+    height: 32px !important;
+  }
+  .RecentCourses-titleContainer div {
+    font-size: 11px !important;
+  }
+}
+
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  table {
+    padding: 0 !important;
+  }
+
+  thead {
+    display: none;
+  }
+
+  .dashboard-table {
+    padding: 40px 8px !important;
+  }
+  table,
+  th,
+  tbody,
+  thead {
+    border: none !important;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  .table-bullet {
+    display: none;
+  }
+  td:nth-of-type(1):before {
+    display: none;
+  }
+  tr:nth-of-type(1):before {
+    display: none;
+  }
+  td:nth-of-type(2):before {
+    content: 'Name';
+    color: #b3b3b3;
+  }
+  td:nth-of-type(3):before {
+    content: 'Joined Date';
+    color: #b3b3b3;
+  }
+  td:nth-of-type(4):before {
+    content: 'Course Title';
+    color: #b3b3b3;
+  }
+  td:nth-of-type(5):before {
+    content: 'Completed Date';
+    color: #b3b3b3;
+  }
+  td:nth-of-type(6):before {
+    content: 'Status';
+    color: #b3b3b3;
+  }
+  td:nth-of-type(7):before {
+    content: 'Subscribe';
+    color: #b3b3b3;
+    padding: 20px 0;
+  }
+  .studentList-viewall table {
+    text-align: left !important;
+  }
+}
+
+.delete-course-modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  align-items: center;
+  padding: 35px;
+}
+
+.delete-course-modal-content .deleteCourse {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  color: #1a1a1a;
+}
+
+.delete-course-modal-content .deleteContent {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  color: #1a1a1a;
+}
+
+.delete-course-modal-content .buttons {
+  display: flex;
+  gap: 75px;
+}
+
+.delete-course-modal-content .buttons button {
+  width: 210px;
+  height: 44px;
+  border-radius: 6px;
+  outline: none;
+}
+
+.delete-course-modal-content .buttons .cancel {
+  border: 1px solid #d5d4dc !important;
+  background: #ffffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 35px;
+  text-align: center;
+  color: #111111;
+}
+
+.delete-course-modal-content .buttons .delete {
+  border: none;
+  background: rgba(9, 41, 99, 0.2);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 35px;
+  text-align: center;
+  color: #092963;
+}
+
+@media screen and (max-width: 1307px) {
+  .delete-course-modal {
+    width: 600px !important;
+    height: 270px !important;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .delete-course-modal {
+    width: 400px !important;
+    height: 270px !important;
+  }
+  .delete-course-modal-content .buttons {
+    gap: 11px !important;
+  }
+  .delete-course-modal-content .buttons button {
+    width: 159px !important;
+  }
+}
+@media screen and (max-width: 435px) {
+  .delete-course-modal {
+    width: 260px !important;
+    height: 270 !important;
+  }
+  .delete-course-modal-content .deleteContent {
+    font-size: 18px !important;
+    line-height: 22px !important;
+  }
+  .delete-course-modal-content .buttons button {
+    width: 111px !important;
+    height: 37px !important;
+  }
+  .delete-course-modal-content .buttons {
+    gap: 12px !important;
+  }
+}

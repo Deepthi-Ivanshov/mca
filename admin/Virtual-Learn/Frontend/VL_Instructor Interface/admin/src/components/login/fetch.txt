@@ -1,0 +1,165 @@
+fetch('http://localhost:8000/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email: props.target.userName.value,
+      password: props.target.password.value,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      const response = data;
+      let isAuthenticated = false;
+      if (response.status === 401) {
+        isAuthenticated = false;
+        console.log(response.message);
+      }
+      if (response.access_token) {
+        const token = response.access_token;
+        console.log(token);
+        isAuthenticated = true;
+      }
+
+      PrivateRoute(isAuthenticated);
+    });
+}
+
+
+
+
+  fetch('http://localhost:8000/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      email: props.target.userName.value,
+      password: props.target.password.value,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      const response = data;
+      let isAuthenticated = false;
+      if (response.status === 401) {
+        isAuthenticated = false;
+        console.log(response.message);
+      }
+      if (response.access_token) {
+        const token = response.access_token;
+        isAuthenticated = true;
+        console.log(token);
+      }
+
+      const auth = { isAuthenticated };
+      auth.isAuthenticated = true;
+      if (auth.isAuthenticated === true) {
+        console.log('navigate to Home', token);
+        return <Verification props={token} />;
+      } else {
+        console.log('navigate to login');
+        return <Navigate to="/login" />;
+      }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  const videoItem = [];
+
+  useEffect(() => {
+    setCourse(videoItem);
+  }, []);
+  function recentlyAdded(data) {
+    const videosData = data && data.length > 0 && data[0].videos;
+
+    videosData.forEach((element) => {
+      if ((element.addedBy = 'hem@email.com')) {
+        console.log('ele', element);
+        videoItem.push(element);
+      }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    import React, { useEffect, useState } from 'react';
+
+import ReactPaginate from 'react-paginate';
+
+const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+
+function Items({ currentItems }) {
+  return (
+    <>
+      {currentItems &&
+        currentItems.map((item) => (
+          <div>
+            <h3>Hi selected Item #{item}</h3>
+          </div>
+        ))}
+    </>
+  );
+}
+
+function PaginatedItems({ itemsPerPage, props }) {
+  const [currentItems, setCurrentItems] = useState(null);
+  const [pageCount, setPageCount] = useState(0);
+
+  const [itemOffset, setItemOffset] = useState(0);
+  console.log('props', props);
+  useEffect(() => {
+    const endOffset = itemOffset + itemsPerPage;
+    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    setCurrentItems(items.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(items.length / itemsPerPage));
+  }, [itemOffset, itemsPerPage]);
+
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * itemsPerPage) % items.length;
+    console.log(
+      `User requested page number ${event.selected}, which is offset ${newOffset}`
+    );
+    setItemOffset(newOffset);
+  };
+
+  return (
+    <>
+      <Items currentItems={currentItems} />
+      <ReactPaginate
+        breakLabel="..."
+        nextLabel="NEXT"
+        onPageChange={handlePageClick}
+        pageRangeDisplayed={5}
+        pageCount={pageCount}
+        previousLabel="PREVIOUS"
+        renderOnZeroPageCount={null}
+      />
+    </>
+  );
+}
+
+export default PaginatedItems;
+
+  {/*<ChangePassword password={this.changePW} />*/}

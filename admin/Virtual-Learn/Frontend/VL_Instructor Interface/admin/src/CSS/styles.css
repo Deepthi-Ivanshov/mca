@@ -1,0 +1,276 @@
+@font-face {
+  font-family: ProximaNovaSoft-Regular;
+  src: url('../fonts/ProximaNovaSoft-Regular.otf');
+}
+
+@font-face {
+  font-family: AvenirLTStd-Book;
+  src: url('../fonts/AvenirLTStd-Book.otf');
+}
+
+:root {
+  --primaryClr: #092963;
+  --secondaryClr: #ee5c4d;
+  --underlineClr: #253157;
+  --formFontClr: #7a7a7a;
+  --primaryFont: 'ProximaNovaSoft-Regular';
+  --secondaryFont: 'AvenirLTStd-Book';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #d4d4d4;
+}
+
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+/*Login*/
+
+.admin-login {
+  background-color: var(--primaryClr);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 670px) {
+  .login-form {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+  }
+  .login-logo {
+    position: relative;
+    transform: scale(0.8);
+  }
+  .input-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .ForgotPW-text p {
+    margin: 20px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    opacity: 0.6;
+  }
+
+  .input-container label {
+    left: 38px !important;
+  }
+}
+
+.login-form {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  background-color: #ffffff;
+  justify-items: center;
+  align-content: center;
+  width: 600px;
+  height: 634px;
+  border-radius: 4px;
+}
+
+.login-logo {
+  position: relative;
+  width: 245px;
+}
+.input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container:focus-within label {
+  transform: translate(0, 12px) scale(0.8);
+  color: var(--formFontClr);
+}
+.input-container .filled {
+  transform: translate(0, 12px) scale(0.8);
+}
+.input-container label {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(0, 23px) scale(1);
+  transform-origin: top left;
+  transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  color: #6f81a5;
+  left: 16px;
+  font-family: var(--secondaryFont);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.4px;
+}
+
+.input-container input:not([value='']) {
+  opacity: 1;
+  color: var(--primaryClr);
+}
+
+.input-container input[type='password'] {
+  letter-spacing: 5px;
+}
+
+.input-container input {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: #072d5b;
+  opacity: 0.4;
+  outline: 0;
+  height: 64px;
+  padding: 24px 16px 4px 16px;
+  font-size: 20px;
+  line-height: 1;
+  outline: none;
+  box-shadow: none;
+  transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+
+.input-container input:focus {
+  border: 0 0 0 2px #000000;
+  opacity: 1;
+}
+
+.login-input {
+  width: 330px;
+}
+.login-ForgotPW-container {
+  position: relative;
+  width: 330px;
+}
+
+.login-ForgotPW {
+  text-decoration: none;
+  font-family: var(--primaryFont);
+  float: right;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  color: var(--secondaryClr);
+}
+
+.login-submit {
+  background-color: var(--secondaryClr);
+  border: none;
+  width: 330px;
+  height: 44px;
+  border-radius: 6px;
+  color: #ffffff;
+  font-family: var(--primaryFont);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 35px;
+  margin-top: 60px;
+  cursor: pointer;
+}
+
+/*Forgot Password*/
+.ForgotPW-text {
+  position: relative;
+  width: 402px;
+  text-align: center;
+  font-family: var(--primaryFont);
+  color: var(--primaryClr);
+}
+
+.ForgotPW-text h2 {
+  margin-top: 40px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 35px;
+}
+
+.ForgotPW-text p {
+  margin-top: 20px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.OTP {
+  font-family: var(--secondaryFont);
+}
+
+.ResendOTP {
+  font-family: var(--primaryFont);
+  font-size: 20px;
+  margin-top: 19px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.ResendOTP p {
+  font-weight: 600;
+  color: #6b7fa1;
+  line-height: 26px;
+}
+
+.ResendCode {
+  color: var(--secondaryClr);
+  text-decoration: none;
+  font-weight: 700;
+  padding-left: 10px;
+}
+
+.newPassword {
+  margin-top: 40px;
+  height: 738px;
+}
+
+.newPWSubmit {
+  margin-top: 40px;
+}
+
+.logginIn {
+  font-family: var(--primaryFont);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1eab0d;
+}
+
+.Invalid-login {
+  font-family: var(--primaryFont);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #ff0031;
+}

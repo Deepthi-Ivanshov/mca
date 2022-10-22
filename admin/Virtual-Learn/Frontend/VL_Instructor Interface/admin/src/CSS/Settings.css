@@ -1,0 +1,121 @@
+@font-face {
+  font-family: ProximaNovaSoft-Regular;
+  src: url('../fonts/ProximaNovaSoft-Regular.otf');
+}
+
+@font-face {
+  font-family: AvenirLTStd-Book;
+  src: url('../fonts/AvenirLTStd-Book.otf');
+}
+
+:root {
+  --primaryClr: #092963;
+  --secondaryClr: #ee5c4d;
+  --underlineClr: #253157;
+  --formFontClr: #7a7a7a;
+  --backgroundClr: #f9f9f9;
+  --dashboardFont: #292929;
+  --primaryFont: 'ProximaNovaSoft-Regular';
+  --secondaryFont: 'AvenirLTStd-Book';
+}
+
+.Settings {
+  font-family: var(--primaryFont);
+}
+
+.ChangePassword {
+  margin: 43px 23px;
+}
+
+.ChangePasswordFields {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+}
+
+.updatePassword {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.updatePassword label {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  color: #232323;
+}
+
+.updatePassword input {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 10px;
+  width: 342px;
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid #d5d4dc;
+  border-radius: 8px;
+}
+
+.saveButtonPasswordChange {
+  margin-top: 27px;
+}
+
+@media screen and (max-width: 1756px) {
+  .updatePassword input {
+    width: 306px !important;
+    height: 40px !important;
+  }
+}
+
+@media screen and (max-width: 1650px) {
+  .updatePassword input {
+    width: 254px !important;
+    height: 37px !important;
+  }
+  .saveButton {
+    width: 155.81px !important;
+  }
+}
+
+@media screen and (max-width: 1414px) {
+  .updatePassword input {
+    width: 214px !important;
+    height: 37px !important;
+  }
+  .saveButton {
+    height: 36px !important;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .ChangePasswordFields {
+    margin-top: 20px !important;
+    flex-direction: column !important;
+  }
+}
+
+.passwordErr-warning {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: #ef8943;
+  display: flex;
+  align-items: center;
+}
+
+.confirmPassword-error {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: #c83532;
+}
